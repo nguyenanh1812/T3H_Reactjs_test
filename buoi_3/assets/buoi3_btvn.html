@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>BTVN buổi 3</title>
+	<style type="text/css">
+		body {
+			display: flex;
+			justify-content: center;
+			/*align-items: center;*/
+		}
+		div.main {
+			/*display: flex;
+			justify-content: center;
+			align-items: center;*/
+			padding-top: 50px;
+			margin-top:100px;
+			width: 900px;
+			height: auto;
+			/*min-height: 500px;*/
+			background-color: lightyellow;
+			border-radius: 30px;
+		}
+		input[type="text"], select {
+			display: block;
+			width: 800px;
+			height: 28px;
+			margin-left: 50px;
+			margin-top: 10px;
+			margin-bottom: 15px;
+		}
+		button {
+			display: block;
+			width: 60px;
+			height: 30px;
+			color: white;
+			background-color: lightskyblue;
+			border-radius: 6px;
+			border-color: lightskyblue;
+			margin-bottom: 50px;
+			margin-left: 50px;
+		}
+		input[type="checkbox"] {
+			margin: 5px 0px 20px 50px;
+		}
+		label {
+			margin-left: 50px;
+		}
+		.main-right {
+			float: left;
+			width: 450px;
+		}
+		.main-left {
+			float: left;
+			width: 450px;
+		}
+		.main-col-2{
+			float: left;
+			width: 250px;
+		}
+		.main-col-3 {
+			float: left;
+			width: 200px;
+		}
+	</style>
+</head>
+<body>
+	<div class="main">	
+		<div class="main-right ">
+			<label>Email</label>
+			<input style="width: 390px;" type="text" name="">
+		</div>
+		<div class="main-left">
+			<label style="margin-left: 10px;">Password</label>
+			<input style="width: 390px; margin-left: 10px;" type="text" name="">
+		</div>
+		<label>Address</label>
+		<input type="text" name="">
+		<label>Address 2</label>
+		<input type="text" name="">
+		<div class="main-right ">
+			<label>City</label>
+			<input style="width: 390px;" type="text" name="">
+		</div>
+		<div class="main-col-2 ">
+			<label style="margin-left: 10px;">State</label>
+			<select style="width: 240px; margin-left:10px; height: 34px;">
+				<option>Choose...</option>
+			</select>
+		</div>
+		<div class="main-col-3 ">
+			<label style="margin-left: 10px;">Zip</label>
+			<input style="width: 140px; margin-left:10px;" type="text" name="">
+		</div>
+		<input type="checkbox" name=""><span> Check me out</span> 
+		<button>Sign in</button>
+	</div>
+</body>
+</html>

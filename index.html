@@ -3,67 +3,134 @@
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
-	<title>Cities</title>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<title>T3H ReatJS AnhNT</title>
+	<style type="text/css">
+		body {
+			font-family: arial;
+		}
+		header {
+			color: white;
+			background-color: #333333;
+			display: flex;
+		}
+		header ul {
+			margin: 0;
+			padding: 0;
+		}
+		header ul li {
+			display: block;
+		}
+		header ul li {
+			float: left;
+			width: 80px;
+			list-style: none;
+		}
+		header ul li:hover {
+			background-color: #00b300;
+		}
+		header a {
+			display: flex;
+			justify-content: center;
+			font-size: 18px ;
+			font-weight: 500;
+			padding-top: 15px;
+			padding-bottom: 15px;
+			text-decoration: none;
+			color: white;
+		}
+		.main {
+			display: flex;
+			justify-content: center;
+			padding-top: 40px;
+		}
+		.main-center {
+			width: 800px;
+			height: 500px;
+			border: 1px solid #003366;
+		}
+		.header-main-center {
+			width: 100%;
+			height: 50px;
+			background-color: #003366;
+			color: white;
+		}
+		.header-main-center a {
+			float: right;
+			padding: 11px;
+			margin: 8px;
+			text-decoration: none;
+			color: white;
+			font-weight: 700;
+			font-size: 11px;
+		}
+		.header-main-center a:hover {
+			background-color: #001a35;
+		}
+		.header-main-center a:focus {
+			background-color: #001a35;
+		}
+		.hr-star {
+			background-color: #003366; 
+			height: 3px; 
+			width: 80px; 
+			margin-right: 4px;
+			margin-left: 4px;
+		}
+		.main-form {
+			display: flex;
+			justify-content: center;
+		}
+		a {
+			text-decoration: none;
+			color: red;
+		}
+		li {
+			padding: 5px;
+		}
+		.main-form a:hover{
+			font-size: 18px;
+		}
+	</style>
 </head>
-<style type="text/css">
-	body{
-		margin: 18%;
-		width: 64%;
-		font-weight: bold;
-		font-family: Genevar;
-	}
-	footer, header{
-		display: flex;
-		justify-content: center;
-		align-items: center;
-		clear: left;
-		background-color: gray;
-		color: white;
-	}
-	header{
-		height: 100px;
-		font-size: 24px;
-	}
-	footer{
-		height: 50px ;
-		font-size: 13px ;
-	}
-	.left{
-		background:#cccccc ;
-		float:left; 
-		width: 30%; 
-		height: 250px;
-	}
-	.right{
-		float: left;
-		width: 70%;
-		height: 250px;
-		background:  #e6e6e6;
-	} 
-	.right h1,p{
-		margin: 30px;
-		font-size: 18px;
-	}
-	a{color: bllue;}
-	a:hover{color: white;}
-</style>
 <body>
 	<header>
-		<h1>Cites</h1>
-	</header>
-	<div class="left"><br>
-		<ul style="list-style: none;font-size: 19px;" >
-			<li><a href="#">London</a></li>
-			<li style="margin-top: 5px;"><a href="#">Paris </a></li>
-			<li style="margin-top: 5px;"><a href="#">Tokyo </a></li>
-			<li style="margin-top: 30px;"><a href="buoi_2/buoi_2.html"> Click để chuyển sang bài sửa Bảng </a></li>
+		<ul>
+			<li><a href="#">Home</a></li>
+			<li><a href="#">New</a></li>
+			<li><a href="#">Contact</a></li>
+			<li><a href="#">About</a></li>
 		</ul>
+	</header>
+	<div class="main">
+		<div class="main-center">
+			<div class="header-main-center">
+				<span style="display: inline-flex; font-weight: 800; font-size: 16px ; padding-left: 30px; padding-top: 13px;">Bài tập về nhà</span>
+				<span><a href="#" style="margin-right: 30px;">ReactJS</a></span>
+				<span><a href="#">JavaScript</a></span>
+				<span><a href="#" style="background-color: #001a35;">HTML&CSS</a></span>
+			</div>
+			<div style="padding-top: 50px;text-align: center; color: #003366; font-size: 35px; font-weight: bold;">Click để chuyển sang page BTVN</div>
+			<div style="display: flex; justify-content: center; align-items: center; font-size: 20px; padding-top: 10px;color: #003366">
+				<div class="hr-star"></div>
+				<i class="fas fa-star"></i>
+				<div class="hr-star"></div>
+			</div>
+			<div class="main-form">
+				<div style="width: 500px;">
+					<ol>
+						<li><a href="buoi_2/buoi_2.html" target="_blank">Buổi 2 bài table</a></li>
+						<li><a href="buoi_2/buoi_2-btvn.html" target="_blank">Buổi 2 bài Cites</a></li>
+						<li><a href="buoi_3/buoi3_btvn.html" target="_blank">Buổi 3 bài form</a></li>
+						<li><a href="buoi_3/buoi3_btvn2.html" target="_blank">Buổi 3 bài Start Bootstrapt</a>(Không dùng bootstrap - code chay)</li>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+						<li><a href=""></a></li>
+					</ol>
+				</div>
+			</div>
+		</div>
+
 	</div>
-	<div class="right"> 		
-		<h1 style="font-size: 35px; text-align: left;">London</h1>
-		<p>London is the capital city of England. It is the most populous city in the United Kingdom, with a motropolitan area of over 13 milion inhabitants.</p>
-		<p>Standing on the River Thames, London has been a major settlement for two millennia, its history going back to its founding by the Ramans, Who named it Londinum.</p>	
-	</div>
-	<footer><h1>Footer</h1></footer>
 </body>
 </html>

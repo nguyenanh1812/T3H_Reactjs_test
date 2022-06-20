@@ -11,20 +11,23 @@ Xếp loại điểm như sau:
 + 0 <= điểm < 40: Bạn không được lên lớps
 */
 //Khai báo biến
-var stdName = 'TAnh'
-var points = 87
-
-//So sánh tìm xếp loại
-if ( 90 <= points && points <= 100 ) {
-    console.log(`Học sinh ${stdName}: loại S`)
-} else if ( 80<=points ) {
-    console.log(`Học sinh ${stdName}: loại A`)
-} else if ( 70 <= points ) {
-    console.log(`Học sinh ${stdName}: loại B`)
-} else if ( 50 <= points ) {
-    console.log(`Học sinh ${stdName}: loại C`)
-} else if ( 40 <= points ) {
-    console.log(`Học sinh ${stdName}: loại D`)
-} else {
-    console.log(`Học sinh ${stdName}: Không được lên lớp!`)
+//var stdName = 'TAnh'
+//var points = 87
+function rank(stdName, points){ 
+    //So sánh tìm xếp loại
+    if ( 90 <= points && points <= 100 ) {
+        console.log(`Học sinh ${stdName}: loại S`)
+    } else if ( 80<=points ) {
+        console.log(`Học sinh ${stdName}: loại A`)
+    } else if ( 70 <= points ) {
+        console.log(`Học sinh ${stdName}: loại B`)
+    } else if ( 50 <= points ) {
+        console.log(`Học sinh ${stdName}: loại C`)
+    } else if ( 40 <= points ) {
+        console.log(`Học sinh ${stdName}: loại D`)
+    } else {
+        console.log(`Học sinh ${stdName}: Không được lên lớp!`)
+    }
 }
+rank("TAnh", 100)
+rank("AnhNT", 68)

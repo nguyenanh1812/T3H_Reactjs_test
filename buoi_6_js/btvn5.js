@@ -9,25 +9,33 @@ Thực hiện các phép tính số học trên hai số
 -	Output (đầu ra): Thực hiện phép tính với hai số
 */
 //Khai báo biến
-var a = 78
-var b = 97
+//var a = 78
+//var b = 97
 
-//Phép tính
-var add = a + b
-var sub = a - b
-var mul = a * b
-if (a>b) {
-    var div = a / b
-    var mod = a % b
-} else {
-    var div = b / a
-    var mod = b % a
+function calculation(a,b){
+    //Phép tính
+    var add = a + b
+    var sub = a - b
+    var mul = a * b
+    if (a>b) {
+        var div = a / b
+        var mod = a % b
+    } else {
+        var div = b / a
+        var mod = b % a
+    }
+
+
+    //In kết quả
+    console.log(`Tổng 2 số = ${add}`)
+    console.log(`Hiệu 2 số = ${sub}`)
+    console.log(`Tích 2 số = ${mul}`)
+    console.log(`Thương 2 số = ${div}`)
+    console.log(`Phần dư khi chia 2 số = ${mod}`)
+    console.log(`----------`)
 }
 
-
-//In kết quả
-console.log(`Tổng 2 số = ${add}`)
-console.log(`Hiệu 2 số = ${sub}`)
-console.log(`Tích 2 số = ${mul}`)
-console.log(`Thương 2 số = ${div}`)
-console.log(`Phần dư khi chia 2 số = ${mod}`)
+//Gọi Hàm
+calculation(99,81)
+calculation(10,10)
+calculation(88,22)

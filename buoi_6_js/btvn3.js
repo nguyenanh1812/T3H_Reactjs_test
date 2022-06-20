@@ -11,33 +11,41 @@ Vì vậy kết quả hòa chỉ xảy ra khi cả hai đội có số điểm b
 
 //khai báo Data 1: Dolphins có điểm là 96, 108 và89. Koalas có điểm là  88, 91 và 110 
 //Data Dolphins
-var compete1D = 96 ;
+/*var compete1D = 96 ;
 var compete2D = 108 ;
 var compete3D = 89 ;
 
 //Data Koalas
 var compete1K = 88 ;
 var compete2K = 91 ;
-var compete3K = 110 ;
+var compete3K = 110 ; */
 
-//tính tb
-var competeAvgD = (compete1D + compete2D + compete3D) /3 ; 
+function avgPoint(c1, c2, c3) {
+    return  (c1 + c2 + c3) /3 ;
+}
+function teamWin() { 
+    //Gọi hàm avgPoint tính tb
+    var competeAvgD = avgPoint(96, 108, 89) ;
 
-var competeAvgK = (compete1K + compete2K + compete3K) /3 ; 
+    var competeAvgK = avgPoint(88, 91, 110) ; 
 
-console.log(`AVG Dolphins = ${competeAvgD}`) ;
-console.log(`AVG Koalas = ${competeAvgK}`) ;
+    console.log(`AVG Dolphins = ${competeAvgD}`) ;
+    console.log(`AVG Koalas = ${competeAvgK}`) ;
 
-//so sánh in kết quả
-if (competeAvgD > competeAvgK && competeAvgD >=100) {
-    console.log("Dolphins là đội thắng cuộc!") ;
+    //so sánh in kết quả
+    if (competeAvgD > competeAvgK && competeAvgD >=100) {
+        console.log("Dolphins là đội thắng cuộc!") ;
+    }
+    else if (competeAvgD < competeAvgK && competeAvgK >=100) {
+        console.log("Koalas là đội thắng cuộc!") ;
+    }
+    else if (competeAvgD == competeAvgK && competeAvgK >=100) {
+        console.log("Hai đội Koalas và Dolphins hòa nhau!") ;
+    }
+    else  {
+        console.log("Không có đội thắng cuộc!") ;
+    }
 }
-else if (competeAvgD < competeAvgK && competeAvgK >=100) {
-    console.log("Koalas là đội thắng cuộc!") ;
-}
-else if (competeAvgD == competeAvgK && competeAvgK >=100) {
-    console.log("Hai đội Koalas và Dolphins hòa nhau!") ;
-}
-else  {
-    console.log("Không có đội thắng cuộc!") ;
-}
+
+//Gọi hàm teamWin tìm đội thắng cuộc
+teamWin()

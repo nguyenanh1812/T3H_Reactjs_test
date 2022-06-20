@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<!-- Latest compiled and minified CSS -->
+	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet">
+	<!-- Latest compiled JavaScript -->
+	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.bundle.min.js"></script>
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+	<title>Start bootstrap</title>
+	<style type="text/css">
+		body {
+			font-family: arial;
+			width: 100%;
+			overflow-x: hidden;
+		}
+		strong {
+			font-size: 28px;
+		}
+		button {
+			color: hsl(218deg 99% 60%);
+		}
+		.opacity {
+			opacity: 0.85;
+		}
+		header .bg-header, footer .bg-footer {
+			background-image: url("images/bg-masthead.jpg");
+			background-repeat: no-repeat; 
+			background-position: center;
+			background-size: cover;
+			position: relative;
+		}
+		header .bg-header div, footer .bg-footer div{ 
+			position: absolute;
+			top: 50%;
+			left: 50%;
+			transform: translate(-50%,-50%);
+			font-size: 40px;
+			font-weight: 600;
+			color: white;
+			text-align: center;
+		}
+		main .row1 center, main .row3 center {
+			padding: 0 15%;
+		}
+		main .row1 img {
+			margin-top: 60px;
+			margin-bottom: 10px;
+			width: 100px;
+			height: 100px;
+		}
+		main .row2 .col-img {
+			height: 400px;
+			background-repeat: no-repeat; 
+			background-position: center;
+			background-size: cover;
+			position: relative;
+		}
+		main .row2 img {
+			object-fit: cover;
+		}	
+
+		main .row2 .text-middle {
+			display: flex;
+			align-items: center;
+			height: 400px;
+		}
+		main .row3 img {
+			margin: 10px 0;
+			width: 150px;
+			height: 150px;
+			border-radius: 999px;
+		}
+		footer ul li a{
+			text-decoration: none;
+			font-weight: 550;
+		}
+		footer ul li {
+			color: hsl(218deg 99% 60%);
+			margin-left: 40px;
+		}
+		footer ul li:first-child {
+			margin-left: 0px;
+			padding-left: 0px;
+			list-style: none;
+		}
+		footer .row p {
+			margin-right: 140px;
+			opacity: 0.85;
+			font-size: 14px;
+		}
+		footer i {
+			font-size: 35px;
+			margin-left: 30px;
+			color: hsl(218deg 99% 60%);
+		}	
+		@media screen and (max-width: 768px) {
+			header .bg-header div, footer .bg-footer div{
+				font-size: 31px;
+				width: 90%;
+				font-weight: 500;
+			}
+			.input-group input {
+				width: 100% !important; 
+				margin-right: 0px !important;
+			}
+			.input-group button {
+				margin-top: 5px;
+				width: 100% !important; 
+			}
+			footer .row p {
+				margin-right: 0;
+			}
+			footer ul {
+				flex-wrap: wrap;
+			}
+		}
+	</style>
+</head>
+<body>
+	<header>
+		<div class="row bg-light">
+			<div class="col-6 text-center p-2" style="font-size: 18px;">Start Bootstrap</div>
+			<div class="col-6 text-center p-2">
+				<button class="btn btn-sm btn-primary">Sign In</button>
+			</div>
+		</div>
+		<div class="bg-header" style="height: 600px;">
+			<div>
+				<p>
+				Build a landing page for your business or project and generate more leads!
+				</p>
+				<span class="input-group" >
+					<input type="text" class="form-control" style="margin-right: 20px; border-radius: 5px;" placeholder="Enter your email...">
+					<button class="btn btn-md btn-primary " style="width: 130px; border-radius: 5px;">Sign up!</button>
+				</span>
+			</div>
+		</div>
+	</header>
+
+	<main>
+
+		<div class="row row1">
+			<div class="col-md"></div>
+			<div class="col-md" style="height: 350px;">
+				<center>
+				<img src="images/fullrespontive.png">
+				<p><strong>Fully Respnsive</strong>
+				<br><span class="opacity">This theme will look great on any device, no matter the size!</span></p>
+				</center>
+			</div>
+			<div class="col-md" style="height: 350px;">
+				<center><img src="images/boostrap.jpg">
+					<p><strong>Bootstrap 4 Ready</strong><br><span class="opacity">Featuring the latest build of the new Bootstrap 4 framework!</span></p>
+				</center>
+			</div>
+			<div class="col-md" style="height: 350px;">
+				<center><img src="images/ticked.png">
+					<p><strong>Easy to Use</strong><br><span class="opacity">Ready to use with your own content, or customize the source files!</span></p>
+				</center>
+			</div>
+			<div class="col-md"></div>
+		</div>
+
+		<div class="row row2">
+		  <div class="col-md-6 order-md-2 col-img" style="background-image: url('images/bg-showcase-1.jpg');"></div>
+		  <div class="col-md-6 order-md-1 bg-light text-middle">
+		  	<span style="padding: 0 20%;"><strong>Fully Respnsive Design</strong>
+				<br><span class="opacity">When you use a thêm created by Start Bootstrap you know that the theme will look greate on any device, whether it's a phone, tablet, or desktop the page will behave responsively!</span></span>
+		  </div>
+		</div>
+
+		<div class="row row2">
+		  <div class="col-md-6 col-img"  style="background-image: url('images/bg-showcase-2.jpg');"></div>
+		  <div class="col-md-6 bg-light text-middle">
+		  	<span style="padding: 0 20%;"><strong>Updated For Bootstrap 4</strong>
+				<br> <span class="opacity">Newly imporved, and full great utility classes, Bootstrap 4 is leading the way in mobile responsive web development! All of the themes on Start Bootstrap are now using Bootstrap 4!</span></span>
+		  </div>
+		</div>
+
+		<div class="row row2">
+			<div class="col-md-6 order-md-2 col-img" style="background-image: url('images/bg-showcase-3.jpg');"></div>
+		  <div class="col-md-6 order-md-1 bg-light text-middle">
+		  	<span style="padding: 0 20%;"><strong>Easy to Use & Customize</strong>
+				<br><span class="opacity">Landing Page is just HTML and CSS Options. Out of the box, just add your content and images, and your landing page will be ready to go!</span></span>
+		  </div>
+		</div>
+
+		<div class="pt-5"></div>
+		<center>
+			<strong>What people are saying...</strong>
+		</center>
+
+		<div class="row row3">
+			<div class="col-md"></div>
+			<div class="col-md">
+				<center>
+				<img src="images/testimonials-1.jpg">
+				<p><strong>Margaret E.</strong>
+				<br><span class="opacity">"This is fantastic! Thanks so much guys!"</span></p>
+				</center>
+			</div>
+			<div class="col-md">
+				<center>
+				<img src="images/testimonials-2.jpg">
+				<p><strong>Fred S.</strong>
+				<br><span class="opacity">"Bootstrap is amazing. l've been using it to create lots of super nice landing pages."</span></p>
+				</center>
+			</div>
+			<div class="col-md">
+				<center>
+				<img src="images/testimonials-3.jpg">
+				<p><strong>Fully Respnsive</strong>
+				<br><span class="opacity">"Thanks so much for making these frre resources available to us!"</span></p>
+				</center>
+			</div>
+			<div class="col-md"></div>
+		</div>
+
+		<div class="pt-5"></div>
+	</main>
+	<footer>
+		<div class="bg-footer" style="height: 350px;">
+			<div>
+				<p>
+				Ready to get started? Sign up now!
+				</p>
+				<span class="input-group" >
+					<input type="text" class="form-control" style="margin-right: 20px; border-radius: 5px;" placeholder="Enter your email...">
+					<button class="btn btn-md btn-primary " style="width: 130px; border-radius: 5px;">Sign up!</button>
+				</span>
+			</div>
+		</div>
+
+		<div class="pt-5"></div>
+		<div class="row">
+			<div class="col-md-6 col-left text-center">
+				<ul class="d-flex justify-content-center" >
+					<li><a href="">About</a></li>
+					<li><a href="">Contact</a></li>
+					<li><a href="">Terms of Use</a></li>
+					<li><a href="">Privacy Policy</a></li>
+				</ul>
+				<p>© Your website 2019. All Rights Reserved.</p>
+			</div>
+			<div class="col-md-6 text-center">
+				<span>
+				<i class="fa-brands fa-facebook"></i>
+				<i class="fa-brands fa-twitter-square"></i>
+				<i class="fa-brands fa-instagram"></i>
+				</span>
+			</div>
+		</div><div class="pt-5"></div>
+	</footer>
+</body>
+</html>

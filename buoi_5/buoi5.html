@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Buổi 5 Luyện tập</title>
+</head>
+<style type="text/css">
+	.left1, .left2 {
+		float: left;
+		background-color: dimgray;
+		text-align: center;
+		padding: 40px 0px;
+		font-size: 20px;
+	}
+	.left1 {
+		width: 50%;
+	}
+	.left2 {
+		width: 33.33%;
+	}
+	.clear {
+		clear: both;
+	}
+	@media screen and (max-width: 900px) {
+		.left2 {
+			float: none;
+			width: 100%;
+		}
+	}
+	@media screen and (max-width: 600px) {
+		.left1 {
+			float: none;
+			width: 100%;
+		}
+	}
+</style>
+<body>
+<div class="left1">Box1</div>
+<div class="left1" style="background: gray;">Box2</div>
+<div class="clear"></div><br>
+<div class="left2" style="background: dimgray;">Box1</div>
+<div class="left2" style="background: gray;">Box2</div>
+<div class="left2" style="background: lightgray;">Box3</div>
+</body>
+</html>

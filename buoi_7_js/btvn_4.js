@@ -13,37 +13,35 @@ console.log(arr)  //Kết quả [2,3,4,5,6] => shift() loại bỏ phần tử �
 //Bài giải
 
 //Hàm tính số lần xuất hiện của phần tử x bất kỳ
-function countDuplicates(arr,x){
+function countDuplicates(arr, x) {
 	let count = 0
-	for(let i of arr){
-		if(i===x) {
-			count ++
-			//Xóa các phần tử khỏi mảng
-		} 
+	for (let i of arr) {
+		if (i === x) {
+			count++
+		}
 	}
-	console.log(`Số lần xuất hiện của phần tử ${x} là ${count} lần`)
+	return console.log(`Số lần xuất hiện của phần tử ${x} là ${count} lần`)
 }
-
 //Hàm tách mảng của phần tử 
-function getEachValue(arr){
+function getEachValue(arr) {
 	// Tạo một mảng mới(2) xóa các phần tử trùng nhau trong mảng cũ
 	const arrTwo = Array.from(new Set(arr))
-	
+
 	//In mảng muốn kiểm tra và các phần tử của mảng
 	console.log(`Mảng cần kiểm tra [${arr}]`)
 	console.log(`Mảng trên có các phần tử: "${arrTwo}"`)
 
 	//Tách hết các phần tử có trong mảng 2, dùng slice() để copy mảng 2 sang một mảng khác và khi dùng shift() sẽ không bị ảnh hưởng
-	for(let i of arrTwo.slice()) {
-		let x = arrTwo.shift() 
+	for (let i of arrTwo.slice()) {
+		let x = arrTwo.shift()
 		//Gọi đến hàm đếm số lần xuất hiện để đếm số lần xuất hiện X
-		countDuplicates(arr,x)
+		countDuplicates(arr, x)
 	}
 	console.log("-------------------------------------")
 }
-
+//Goi ham và truyền vào mảng cần kiểm tra
 getEachValue([1, 2, 2, 2, 6, 6])
-getEachValue(["anh", "em", "ho",  "em", "a", "bc"])
-getEachValue([23, 59,"huhu", "huhu", "hihi", 0, 5, 34, 23])
+getEachValue(["anh", "em", "ho", "em", "a", "bc"])
+getEachValue([23, 59, "huhu", "huhu", "hihi", 0, 5, 34, 23])
 
 

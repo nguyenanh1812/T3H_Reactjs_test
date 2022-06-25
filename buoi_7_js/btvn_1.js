@@ -8,17 +8,16 @@ function countVowels(str) {
     //Chuyển chuỗi sang chữ thường và khai báo biến đếm
     const strTwo = str.toLowerCase()//.split('')
     let count = 0
-    
     //sử dụng vòng lặp for of kiểm tra từng giá trị ký tự trong chuỗi xem có phải nguyên âm ko
-    for(let i of strTwo) {
-        if (i.includes('a') || i.includes('e') || i.includes('i') || i.includes('o') || i.includes('u')) {
-            count ++
+    for (let i of strTwo) {
+        if (["a", "e", "i", "o", "u"].includes(i)) {
+            count++
         }
     }
-    console.log(count)
+    // console.log(count)
+    return count
 }
-
 // Gọi hàm đếm nguyên âm countVowels và truyền cho nó tham số
-countVowels("anh em anh em eiu  iouioU =13")
-countVowels("aeiuo = 5")
-countVowels("kbcsd ddddc= 0")
+console.log(countVowels("anh em anh em eiu  iouioU =13"))
+console.log(countVowels("aeiuo = 5"))
+console.log(countVowels("kbcsd ddddc= 0"))

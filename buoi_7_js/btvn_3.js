@@ -20,27 +20,29 @@ Nếu giá trị này không được cung cấp thì giá trị phần tử đ�
 
 
 function sum(arr) {
-    
+
     let sum = 0, sum1 = 0, sum2 = 0, sum3 = 0, sum4 = 0, sum5 = 0;
     //Dùng for thường
-    for(let i = 0 ; i < arr.length; i++){
+    for (let i = 0; i < arr.length; i++) {
         sum += arr[i]
     }
     console.log(`Dùng for thường tính tổng = ${sum}`)
+
     //for in
-    for(let i in arr){
+    for (let i in arr) {
         sum1 += arr[i]
     }
     console.log(`Dùng for in tính tổng = ${sum1}`)
+
     // for of
-    for(let i of arr){
+    for (let i of arr) {
         sum2 += i
     }
     console.log(`Dùng for of tính tổng = ${sum2}`)
 
     //Dùng while 
     let j = 0
-    while(j < arr.length){
+    while (j < arr.length) {
         sum3 += arr[j]
         j++
     }
@@ -48,23 +50,22 @@ function sum(arr) {
 
     //Dùng do while
     let x = 0
-    do{
+    do {
         sum4 += arr[x]
         x++
-    }while(x < arr.length)
+    } while (x < arr.length)
     console.log(`Dùng Do-While tính tổng = ${sum4}`)
 
-     //Dung forEach
-     arr.forEach(element => {sum5 += element})
-     console.log(`Dùng forEach tính tổng = ${sum5}`)
+    //Dung forEach
+    arr.forEach(element => { sum5 += element })
+    console.log(`Dùng forEach tính tổng = ${sum5}`)
 
     //Dùng reduce
-    console.log("Dùng Reduce tính tổng = " + arr.reduce((sum,currentValue)=> sum + currentValue))
-    
+    console.log("Dùng Reduce tính tổng = " + arr.reduce((sum, currentValue) => sum + currentValue))
+
     //Ngăn cách các giữa các data test
     console.log("----------------------")
 }
-
-sum([1, 2, 3, 4 ,5])
+sum([1, 2, 3, 4, 5])
 sum([10, 5, 35])
 sum([99, 1, 60])

@@ -4,13 +4,14 @@
 
 // Bài giải
 
-function reverse(str){
+function reverse(str) {
     let strReverse = ""
-    for(let i = 0;i < str.length; i++ ){
-        strReverse += str[str.length-i-1]
+    for (let i = 0; i < str.length; i++) {
+        strReverse += str[str.length - i - 1]
         //console.log(str[str.length-i-1])
     }
     console.log(strReverse)
+    return strReverse
 }
 reverse("NguyenTuanAnh-anhnt")
 reverse("huhuhuhu")

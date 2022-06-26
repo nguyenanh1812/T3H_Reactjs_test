@@ -73,21 +73,21 @@ function readLessbtn0() {
 function readMorebtn1() {
   document.getElementById(`btnReadMore1`).style.display = "none"
   document.getElementById(`btnReadLess1`).style.display = "block"
-  document.getElementById(`description1`).innerHTML = articles[0].description
+  document.getElementById(`description1`).innerHTML = articles[1].description
 }
 function readLessbtn1() {
   document.getElementById(`btnReadLess1`).style.display = "none"
   document.getElementById(`btnReadMore1`).style.display = "inline-block"
-  document.getElementById(`description1`).innerHTML = articles[0].description.slice(0, 50)
+  document.getElementById(`description1`).innerHTML = articles[1].description.slice(0, 50)
 }
 
 function readMorebtn2() {
   document.getElementById(`btnReadMore2`).style.display = "none"
   document.getElementById(`btnReadLess2`).style.display = "block"
-  document.getElementById(`description2`).innerHTML = articles[0].description
+  document.getElementById(`description2`).innerHTML = articles[2].description
 }
 function readLessbtn2() {
   document.getElementById(`btnReadLess2`).style.display = "none"
   document.getElementById(`btnReadMore2`).style.display = "inline-block"
-  document.getElementById(`description2`).innerHTML = articles[0].description.slice(0, 50)
+  document.getElementById(`description2`).innerHTML = articles[2].description.slice(0, 50)
 }

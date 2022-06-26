@@ -8,7 +8,7 @@ const sortBySalary = [...users].sort((a, b) => (a.salary > b.salary) ? 1 : -1)
 console.log(sortBySalary)
 
 //Theo firstname
-const sortByFirstName = [...users].sort((a, b) => (a.first_name > b.first_name) ? 1 : -1)
+const sortByFirstName = [...users].sort((a, b) => (a.first_name.toLocaleLowerCase() > b.first_name.toLocaleLowerCase()) ? 1 : -1)
 console.log(sortByFirstName)
 
 // //Theo cả salary và firstname

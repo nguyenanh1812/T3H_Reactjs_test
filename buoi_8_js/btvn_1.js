@@ -11,11 +11,11 @@ Thứ tự trong mảng mới phải cùng thứ tự với người dùng xuấ
 // đọc tệp JSON là sử dụng require() => đọc và phân tích cú pháp tệp JSON và trả về một đối tượng JSON
 const users = require('./data.json')
 
-let usersTwo = []
-users.forEach((user, index, users) => {
-    usersTwo.push({
-        "first_name": user.first_name,
-        "last_name": user.last_name
-    })
+const usersTwo = []
+users.forEach(({ first_name, last_name }) => {
+    usersTwo.push(`${first_name} ${last_name}`)
 })
 console.log(usersTwo)
+
+
+

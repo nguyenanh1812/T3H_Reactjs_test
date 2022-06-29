@@ -7,8 +7,13 @@ person = {
     company: 'Space X'
 }
 
-function displayName(a = {}) {
-    return console.log(a.first + " " + a.last)
+function displayName({ first, last }) {
+    return console.log(`${first} ${last}`)
 }
-
 displayName(person)
+
+
+function displayName1({ first, last, twitter }) {
+    return console.log(`${first} ${last} has twitter ${twitter}`)
+}
+displayName1(person)

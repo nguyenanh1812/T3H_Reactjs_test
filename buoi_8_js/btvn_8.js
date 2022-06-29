@@ -10,6 +10,6 @@ let objAddress = [
     }
 ]
 
-objAddress.forEach((addr, index, objAddress)=> {
-    console.log(addr.address + "," + addr.district + "," + addr.province + "," + addr.city)
+objAddress.forEach(({ address, district, province, city }, index, objAddress) => {
+    console.log(`${address}, ${district},  ${province}, ${city}`)
 }) 

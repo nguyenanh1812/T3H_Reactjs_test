@@ -5,4 +5,5 @@
 const users = require('./data.json')
 
 //Tìm User male va < 40
-console.log(users.filter((user) => user.gender === "Male" && user.age < 40))
+const valueGender = 'male'
+console.log(users.filter(({age,gender}) => gender.toLocaleLowerCase() === valueGender && age < 40))

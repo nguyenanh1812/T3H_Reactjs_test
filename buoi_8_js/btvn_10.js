@@ -2,12 +2,12 @@
 // Data test:
 let colors = ["white", "blue", "yellow", "black", "red", "green"];
 
-function obj(a) {
+function obj([white, blue, yellow, black, red, green]) {
     let b = []
     b.push({
-        "firstColor": a[0],
-        "secondColor":  a[1],
-        "otherColors": a.slice(2)
+        "firstColor": white,
+        "secondColor": blue,
+        "otherColors": `${yellow} ${black} ${red} ${green}`
     })
     return b
 }

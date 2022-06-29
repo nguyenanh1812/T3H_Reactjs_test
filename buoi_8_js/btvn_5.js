@@ -7,31 +7,28 @@ const users = require('./data.json')
 /*Bài 1: lấy first_name và last_name của tất cả người dùng và đặt nó vào một mảng khác. 
 Thứ tự trong mảng mới phải cùng thứ tự với người dùng xuất hiện trong mảng người dùng*/
 console.log("---Bài 1---")
-let usersTwo = []
-users.reduce((preValue, currentValue) => {
-    return usersTwo.push({
-        "first_name": currentValue.first_name,
-        "last_name": currentValue.last_name
-    })
-}, 0)
-console.log(usersTwo)
+let result = users.reduce((usersTwo, currentValue) => {
+    usersTwo.push(`${currentValue.first_name} ${currentValue.last_name}`)
+    return usersTwo
+}, [])
+console.log(result)
 
 /*Bài 2: Tìm user là male và có tuổi dưới 40*/
 console.log("---Bài 2---")
-let filterUser = []
-users.reduce((preValue, currentValue) => {
-    return currentValue.gender === "Male" && currentValue.age < 40
-        ? console.log(currentValue)
-        : preValue
-}, 0)
-
+const valueGender = 'male'
+const resultTwo = users.reduce((preValue, currentValue) => {
+    if (currentValue.gender.toLocaleLowerCase() === valueGender && currentValue.age < 40) {
+        preValue.push(currentValue)
+    }
+    return preValue
+}, [])
+console.log(resultTwo)
 /*Bài 3: Làm giống bài 1 nhưng sử dụng map = Bài 1*/
 
 /*Bài 4: chuyển đổi key của object thành camelCase*/
 console.log("---Bài 4---")
-let usersCamelCase = []
-users.reduce((preValue, currentValue) => {
-    return usersCamelCase.push({
+const usersCamelCase = users.reduce((preValue, currentValue) => {
+    preValue.push({
         "iD": currentValue.id,
         "fistName": currentValue.first_name,
         "lastName": currentValue.last_name,
@@ -40,5 +37,6 @@ users.reduce((preValue, currentValue) => {
         "age": currentValue.age,
         "salary": currentValue.salary
     })
-}, 0)
+    return preValue
+}, [])
 console.log(usersCamelCase)

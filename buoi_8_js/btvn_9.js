@@ -93,27 +93,18 @@ const articles = [
 //Tạo div HTML
 for (let i in articles) {
   const post = document.createElement('div')
-  post.innerHTML = `<h3 id="name${i}"></h3>
-    <h1 id="title${i}"></h1>
-    <span id="description${i}"></span>
+  post.innerHTML = `<h3 id="name${i}"><p style=" margin: auto; font-size:10px; float: left">@<p> ${articles[i].name}</h3>
+    <h1 id="title${i}">${articles[i].title}</h1>
+    <span id="description${i}">${articles[i].description.slice(0, 50)}</span>
     <button id="btnReadMore${i}" onclick="readMore(document.getElementById('btnReadMore${i}'), document.getElementById('description${i}'))">Read more</button>`
   document.body.append(post)
   //document.body.prepend(post
   
-  document.getElementById(`name${i}`).innerHTML = `<p style=" margin: auto; font-size:10px; float: left">@<p> ${articles[i].name}`   
-  document.getElementById(`title${i}`).innerHTML = articles[i].title
-  document.getElementById(`description${i}`).innerHTML = articles[i].description.slice(0, 50)
+  //document.getElementById(`name${i}`).innerHTML = `<p style=" margin: auto; font-size:10px; float: left">@<p> ${articles[i].name}`   
+  //document.getElementById(`title${i}`).innerHTML = articles[i].title
+  //document.getElementById(`description${i}`).innerHTML = articles[i].description.slice(0, 50)
 }
 
-// articles.forEach(({ name, description, title }, index, articles) => {
-//   console.log(name)
-//   console.log(title)
-//   console.log(description)
-//   console.log(`index${index}`)
-//   document.getElementById(`name${index}`).innerHTML = `<p style=" margin: auto; font-size:10px; float: left">@<p> ${name}`
-//   document.getElementById(`title${index}`).innerHTML = title
-//   document.getElementById(`description${index}`).innerHTML = description.slice(0, 50)
-// })
 
 //reade more => full , read less = 50
 function readMore(readMorebtn, description) {

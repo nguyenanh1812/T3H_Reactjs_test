@@ -12,6 +12,7 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		flex-wrap: wrap;
 		background: linear-gradient(#6dd5f5, #E0f5fb);
 		min-height: 1000px;
 	}
@@ -20,9 +21,9 @@
 		border: 10px solid #C0d9e2;
 		border-radius: 30px;
 		background: white;
-		width: 300px;
+		width: 330px;
 		min-height: 500px;
-		margin: 20px;
+		margin: 60px 50px;
 		padding: 20px;
 	}
 
@@ -39,7 +40,7 @@
 	button {
 		font-size: 16.5px;
 		font-weight: 600;
-		background: white;
+		background: rgb(255, 255, 255);
 		border: none;
 		color: #E66a85;
 	}
@@ -56,14 +57,13 @@
 </style>
 
 <body>
-	<div>
+	<!-- <div>
 		<h3 id="name0">Name: </h3>
 		<h1 id="title0">Title</h1>
 		<span id="description0">
 			Description
 		</span>
-		<button id="btnReadMore0" onclick="readMorebtn0()">Read more</button>
-		<button id="btnReadLess0" onclick="readLessbtn0()" style="display: none;">Read less</button>
+		<button id="btnReadMore0" onclick="readMore(document.getElementById('btnReadMore0'),  document.getElementById(`description0`))">Read more</button>
 	</div>
 	<div>
 		<h3 id="name1">Name: </h3>
@@ -71,8 +71,7 @@
 		<span id="description1">
 			Description
 		</span>
-		<button id="btnReadMore1" onclick="readMorebtn1()">Read more</button>
-		<button id="btnReadLess1" onclick="readLessbtn1()" style="display: none;">Read less</button>
+		<button id="btnReadMore1" onclick="readMore(document.getElementById('btnReadMore1'),  document.getElementById(`description1`))">Read more</button>
 	</div>
 	<div>
 		<h3 id="name2">Name: </h3>
@@ -80,9 +79,8 @@
 		<span id="description2">
 			Description
 		</span>
-		<button id="btnReadMore2" onclick="readMorebtn2()">Read more</button>
-		<button id="btnReadLess2" onclick="readLessbtn2()" style="display: none;">Read less</button>
-	</div>
+		<button id="btnReadMore2" onclick="readMore(document.getElementById('btnReadMore2'), document.getElementById(`description2`))">Read more</button>
+	</div> -->
 </body>
 <script type="text/javascript" src="btvn_9.js"></script>
 

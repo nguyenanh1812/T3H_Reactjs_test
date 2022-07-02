@@ -69,6 +69,7 @@ for (let i in questions) {
 const btnNext = document.getElementById('btn-next')
 const btnPre = document.getElementById('btn-pre')
 const btnSubmit = document.getElementById('btn-submit')
+
 let index = 1;
 const divQues = document.getElementsByClassName('questions')
 btnNext.addEventListener('click', function () {
@@ -85,8 +86,8 @@ btnNext.addEventListener('click', function () {
 btnPre.addEventListener('click', function () {
     if (index > 1) {
         index--
-        divQues[i].classList.add('hide')
-        divQues[i - 1].classList.remove('hide')
+        divQues[index].classList.add('hide')
+        divQues[index - 1].classList.remove('hide')
     }
     if (index < questions.length) {
         btnNext.style.display = 'inline-block'

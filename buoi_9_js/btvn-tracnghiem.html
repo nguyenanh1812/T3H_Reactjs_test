@@ -1,19 +1,23 @@
 <!DOCTYPE html>
 <html>
+
 <head>
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<title>Trắc nghiệm đê</title>
 </head>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+	integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <style type="text/css">
 	body {
 		background: linear-gradient(to left, lightgray, pink);
-		height: 1000px;
 		display: flex;
 		flex-wrap: wrap;
 		justify-content: center;
 		align-items: center;
+		min-height: 600px;
+		min-width: 300px;
 	}
 
 	div {
@@ -21,15 +25,19 @@
 		border-radius: 20px;
 		background: lightskyblue;
 		width: 80%;
-		min-height: auto;
+		min-width: 200px;
+		height: auto;
 		box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
+		position: absolute;
+		left: 50%;
+		top: 50%;
+		transform: translate(-50%,-50%);
 	}
 
 	div h2,
 	div span,
 	div p {
 		color: darkblue;
-		opacity: 0.8;
 	}
 
 	div h2 {
@@ -80,7 +88,8 @@
 
 <body>
 	<div>
-		<h2 id="question">Câu hỏi 1: </h2>
+		<p id="content-ques"></p>
+		<!-- <h2 id="question">Câu hỏi 1: </h2>
 		<p id="answer">
 			<input type="radio" id="a" name="q&a0" value="a">
 			<label id="answer1">HTML</label><br>
@@ -90,14 +99,13 @@
 			<label id="answer3">JavaScript</label><br>
 			<input type="radio" id="d" name="q&a0" value="d">
 			<label id="answer4">ReactJS</label>
-		</p>
+		</p> -->
 		<center id="point">
 			<button id="btn-pre"><i class="fa-solid fa-arrow-left-long"> PreV</i></button>
 			<button id="btn-next"> <i class="fa-solid">Next </i><i class="fa-solid fa-arrow-right-long"></i></button>
 			<button id="btn-submit" style="display: none;"><i class="fa-solid fa-paper-plane"> Submit</i></button>
 		</center>
 	</div>
-
 </body>
 <script type="text/javascript" src="btvn-tracnghiem.js"></script>
 

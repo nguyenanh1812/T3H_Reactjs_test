@@ -42,77 +42,57 @@ const questions = [
             d: 'nothing'
         },
         multi: false,
-        correctAnswer: 'b'
+        correctAnswer: 'a'
     }
 ];
 
-// for (let i in questions) {
-//     const div = document.createElement('div')
-//     //div.classList.add('hide')
-//     div.innerHTML = `
-//         <h2 id="question">Câu hỏi ${i + 1}: ${questions[i].question}</h2>
-//         <p id="answer">
-//             <input type="radio" id="a" name="q&a${i}" value="a">
-//             <label id="answer1">${questions[i].answers.a}</label><br>
-//             <input type="radio" id="b" name="q&a${i}" value="b">
-//             <label id="answer2">${questions[i].answers.b}</label><br>
-//             <input type="radio" id="c" name="q&a${i}" value="c">
-//             <label id="answer3">${questions[i].answers.c}</label><br>
-//             <input type="radio" id="d" name="q&a${i}" value="d">
-//             <label id="answer4">${questions[i].answers.d}</label>
-//         </p>
-//         <center id="point">
-//             <button id="btn-pre"><i class="fa-solid fa-arrow-left-long"> PreV</i></button>
-//             <button id="btn-next"> <i class="fa-solid">Next </i><i class="fa-solid fa-arrow-right-long"></i></button>
-//             <button id="btn-submit" style="display: none;"><i class="fa-solid fa-paper-plane"> Submit</i></button>
-//         </center>`
-//     document.body.append(div)
-// }
+for (let i in questions) {
+    const div = document.createElement('p')
+    div.setAttribute('class', `questions`)
+    div.innerHTML = `
+        <h2 id="question">Câu hỏi ${i * 1 + 1}: ${questions[i].question}</h2>
+        <p id="answer">
+            <input type="radio" id="a" name="q&a${i}" value="a">
+            <label id="answer1">${questions[i].answers.a}</label><br>
+            <input type="radio" id="b" name="q&a${i}" value="b">
+            <label id="answer2">${questions[i].answers.b}</label><br>
+            <input type="radio" id="c" name="q&a${i}" value="c">
+            <label id="answer3">${questions[i].answers.c}</label><br>
+            <input type="radio" id="d" name="q&a${i}" value="d">
+            <label id="answer4">${questions[i].answers.d}</label>
+        </p>`
+    document.querySelector('p').append(div)
+    i != 0 ? div.classList.add('hide') : div.classList.add()
+}
 
-const question = document.querySelector('#question')
-const answer1 = document.querySelector('#answer1')
-const answer2 = document.querySelector('#answer2')
-const answer3 = document.querySelector('#answer3')
-const answer4 = document.querySelector('#answer4')
-//console.log(question,answer1,answer2,answer3,answer4)
-question.innerText = `Câu hỏi 1: ${questions[0].question} `
-answer1.innerText = questions[0].answers.a
-answer2.innerText = questions[0].answers.b
-answer3.innerText = questions[0].answers.c
-answer4.innerText = questions[0].answers.d
-
-let i = 1;
+// sự kiện cho các nút
 const btnNext = document.getElementById('btn-next')
 const btnPre = document.getElementById('btn-pre')
 const btnSubmit = document.getElementById('btn-submit')
+let index = 1;
+const divQues = document.getElementsByClassName('questions')
 btnNext.addEventListener('click', function () {
-    question.innerText = `Câu hỏi ${i + 1}: ${questions[i].question} `
-    answer1.innerText = questions[i].answers.a
-    answer2.innerText = questions[i].answers.b
-    answer3.innerText = questions[i].answers.c
-    answer4.innerText = questions[i].answers.d
-    i++;
-    if (i == questions.length) {
+    divQues[index - 1].classList.add('hide')
+    divQues[index].classList.remove('hide')
+    index++
+    if (index == questions.length) {
         btnNext.style.display = 'none'
         btnSubmit.style.display = 'inline-block'
     }
-    console.log(i)
+    console.log(index)
 })
 
 btnPre.addEventListener('click', function () {
-    if (i > 1) {
-        i--;
-        question.innerText = `Câu hỏi ${i}: ${questions[i - 1].question} `
-        answer1.innerText = questions[i - 1].answers.a
-        answer2.innerText = questions[i - 1].answers.b
-        answer3.innerText = questions[i - 1].answers.c
-        answer4.innerText = questions[i - 1].answers.d
-        console.log(i)
+    if (index > 1) {
+        index--
+        divQues[i].classList.add('hide')
+        divQues[i - 1].classList.remove('hide')
     }
-    if (i < questions.length) {
+    if (index < questions.length) {
         btnNext.style.display = 'inline-block'
         btnSubmit.style.display = 'none'
     }
+    console.log(index)
 })
 
 btnSubmit.addEventListener('click', function () {
@@ -132,4 +112,4 @@ btnSubmit.addEventListener('click', function () {
         pointText.innerHTML = `<p class="point">${count}/${questions.length} Correct Answer</p>`
     }
 })
-//correct: a c c ab
+//correct: a c c a

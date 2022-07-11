@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Binz Nội Thất</title>
+</head>
+<style type="text/css">
+	*{
+    margin: 0;
+    padding: 0;
+	}
+	.nav {
+		display: flex;
+		justify-content: center;
+		position: relative;
+		width: 100%;
+		/*background-image: linear-gradient(purple, pink);*/
+		background: gray;
+	}
+	.nav li {
+		list-style: none;
+	}
+	.nav li a{
+    display: block;
+    padding: 0 25px;
+    line-height: 50px;
+    color: #f1f2f3;
+    text-decoration: none;
+	}
+	.nav li:hover>a{
+    background: red;
+    opacity: .7;
+    color: yellow;
+	}
+	/*menu cấp 2*/
+	.nav-l-2-content {
+		display: none;
+		position: absolute;
+		min-width: 30	0px;
+	}
+	.nav-l-2:hover .nav-l-2-content{
+		width: 200px;
+		float: left;
+		display: block;
+		background: linear-gradient(dimgray,lightgray);
+	}
+	/*nav-cấp 3*/
+	.nav-l-3-content {
+		display: none;
+		position: absolute;
+		min-width: 30	0px;
+		margin-left: 200px;
+		margin-top: -50px;
+	}
+	.nav-l-3:hover .nav-l-3-content{
+		width: 200px;
+		float: left;
+		display: block;
+		background: linear-gradient(gray,lightgray);
+	}
+</style>
+<body>
+	<nav>
+		<ul class="nav">
+			<li><a href="">Danh mục sản phẩm</a></li>
+			<li class="nav-l-2"><a href="">Trang chủ</a>
+				<!-- menu cấp 2 -->
+			 	<ul class="nav-l-2-content">
+			 		<li><a href="">Giới thiệu</a></li>
+			 		<!-- menu cấp 3 -->
+			 		<li class="nav-l-3"><a href="">Sản phẩm</a>
+			 			<ul class="nav-l-3-content">
+			 				<li><a href="">Phòng khách</a></li>
+			 				<li><a href="">Phòng ăn</a></li>
+			 				<li><a href="">Phòng ngủ</a></li>
+			 				<li><a href="">Đồ trang chí</a></li>
+			 				<li><a href="">Đệm</a></li>
+			 				<li><a href="">Sản phẩm mới</a></li>
+			 				<li><a href="">Sản phẩm bán chạy</a></li>
+			 				<li><a href="">ALL</a></li>
+			 			</ul>
+			 		</li>
+			 		<li><a href="">Tin tức</a></li>
+			 		<li><a href="">Tuyển dụng</a></li>
+			 		<li><a href="">Liên hệ</a></li>
+			 	</ul>
+			</li>
+			<li><a href="">Phòng khách</a></li>
+			<li><a href="">Phòng ăn</a></li>
+			<li><a href="">Phòng ngủ</a></li>
+			<li><a href="">Trang trí</a></li>
+			<li><a href="">Sản phẩm thanh lý</a></li>
+			<li><a href="">Hỗ trợ khách hàng</a></li>
+		</ul>
+	</nav>
+	
+	<br>
+	<ul style="display: flex; justify-content: center; background: yellowgreen; height: 50px; align-items: center;">
+		<li style="list-style-type: none; padding: 0 25px;">huhu</li>
+		<li style="list-style-type: none; padding: 0 25px;">Haha</li>
+	</ul>	
+	<br>
+	
+</body>
+</html>

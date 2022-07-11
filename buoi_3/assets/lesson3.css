@@ -1,0 +1,50 @@
+* {
+	color: yellowgreen;
+	text-align: center !important;
+}
+
+p {
+	color: blue;
+}
+.class-color {
+	color: red;
+}
+#id-color{
+	color: green;
+}
+
+[name="email"] {
+	display: block;
+	background: blueviolet;
+	border-color: yellowgreen;
+}
+[type="number"] {
+	background-color: lightgrey;
+	color: skyblue;
+	width: 440px;
+	height: 200px;
+}
+
+[value ="NguyenTuanAnh"] {
+	color: skyblue;
+}
+
+div p {
+	font-size: 90px;
+}
+
+label.test-after::after {
+	content: "*";
+	color: red;
+}
+label.test-before::before {
+	content: "*";
+	color: red;
+}
+a:hover {
+	color: red;
+	font-size: 100px;
+}
+li:first-child {
+	font-size: 40px;
+}

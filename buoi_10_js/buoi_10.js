@@ -101,7 +101,7 @@ syntax of call back function: function A => gọi function B thông qua đối s
 
 var promise = new Promise(
     function (resolve, reject) {
-        //fake api lấy dữ liệu từ url link
+        //Logic
         resolve([
             {
                 id: 1,

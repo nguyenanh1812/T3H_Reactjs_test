@@ -71,19 +71,16 @@ const btnPre = document.getElementById('btn-pre')
 const btnSubmit = document.getElementById('btn-submit')
 
 let index = 1;
-<<<<<<< HEAD
-=======
+
 btnPre.classList.add('hide')
 
->>>>>>> 160782f (huhuh)
 const divQues = document.getElementsByClassName('questions')
 btnNext.addEventListener('click', function () {
     divQues[index - 1].classList.add('hide')
     divQues[index].classList.remove('hide')
-<<<<<<< HEAD
-=======
+
     btnPre.classList.remove('hide')
->>>>>>> 160782f (huhuh)
+
     index++
     if (index == questions.length) {
         btnNext.style.display = 'none'
@@ -98,13 +95,11 @@ btnPre.addEventListener('click', function () {
         divQues[index].classList.add('hide')
         divQues[index - 1].classList.remove('hide')
     }
-<<<<<<< HEAD
-=======
+
+
     if (index==1){
         btnPre.classList.add('hide')
     }
-
->>>>>>> 160782f (huhuh)
     if (index < questions.length) {
         btnNext.style.display = 'inline-block'
         btnSubmit.style.display = 'none'

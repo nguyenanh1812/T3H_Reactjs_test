@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title></title>
+</head>
+<style>
+    * {
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+
+    body {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-flow: wrap column;
+        min-height: 100vh;
+        background: linear-gradient(rgb(0, 105, 243), rgb(111, 160, 252));
+        color: rgb(255, 255, 255);
+        font-size: 16px;
+        font-family: arial, sans-serif;
+    }
+
+    /* body::before {
+        position: absolute;
+        content: '';
+        bottom: 0;
+        left: 0;
+        width: 100%;
+        height: 400px;
+        background: url("https://i.ibb.co/yhMN5dd/wave.png");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: bottom left;
+    } */
+
+    table {
+        border-collapse: collapse;
+    }
+
+    caption {
+        font-size: 40px;
+        color: rgb(255, 255, 255);
+    }
+
+    td,
+    th {
+        border: 1px solid white;
+        text-align: center;
+        padding: 15px;
+    }
+
+    .search-users {
+        margin-bottom: 20px;
+        display: flex;
+    }
+
+    #search-input,
+    #select-type-search,
+    #btnSearch {
+        font-size: 20px;
+        padding: 20px;
+        border: none;
+        outline: none;
+    }
+
+    #search-input{
+        width: 500px;
+        border-radius: 50px 0 0 50px;
+    }
+
+    #btnSearch {
+        border-radius: 0 50px 50px 0;
+    }
+
+    #btnSearch:hover {
+        background-color: orange;
+    }
+
+    #select-type-search{
+        color: white;
+        background: transparent;
+        margin-right: 50px;
+    }
+
+    #select-type-search option {
+        color: black;
+        background-color: antiquewhite;
+    }
+
+</style>
+
+<body>
+    <div class="search-users">
+        <select name="" id="select-type-search">
+            <option value="name" selected>Name</option>
+            <option value="email">Email</option>
+            <option value="phone">Phone</option>
+            <option value="company">Company</option>
+        </select>
+        <input type="text" id="search-input" placeholder="Search....">
+        <button id="btnSearch">Search</button>
+    </div>
+    <table id="table-users">
+        <caption>Table Users</caption>
+        <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Phone</th>
+            <th>Company</th>
+            <th>Company Website</th>
+        </tr>
+    </table>
+
+</body>
+<script src="btvn_buoi12.js"></script>
+
+</html>

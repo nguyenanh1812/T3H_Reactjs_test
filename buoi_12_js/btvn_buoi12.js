@@ -1,4 +1,4 @@
-const tableDiv = document.getElementById('table-users')
+const tableDiv = document.querySelector('table')
 const btnSearch = document.getElementById("btnSearch")
 let listUsers = []
 
@@ -8,16 +8,17 @@ async function getApi() {
             listUsers = users
             console.log(listUsers)
             render(listUsers)
-            removeOldUser()
-            search()
+            search(listUsers)
         });
 } getApi()
 
 function render(array) {
-    array.forEach(({ id, name, email, phone, company, website }) => {
+    array.forEach(({ id, name, email, phone, company, website }, index) => {
         const userRow = document.createElement('tr')
+        userRow.setAttribute('id', `user-${index}`)
+        userRow.setAttribute('class', `usersOld`)
         userRow.innerHTML = `
-            <tr class="old-user">
+            <tr>
                 <td>${id}</td>
                 <td>${name}</td>
                 <td>${email}</td>
@@ -30,28 +31,39 @@ function render(array) {
     });
 }
 
-function removeOldUser(){
-    const oldUser = document.getElementsByClassName(`old-user`)
-    while(oldUser.length > 0){
-        oldUser[0].remove();
+function removeOldUser() {
+    const e = document.getElementsByClassName('userOld')    
+    for(let i of e){
+        document.getElementById( `user-${i}`).remove()
     }
-    
 }
-// function filterUsers(array, inputSelect, inputText){
-//     return array.filter(({inputSelect})=> inputSelect.includes(inputText))
-// }
 
-function search() {
+function search(listUsers) {
     btnSearch.addEventListener('click', function () {
+        removeOldUser()
         const selectTypeSearch = document.getElementById("select-type-search").value
         const searchText = document.getElementById("search-input").value.toLocaleLowerCase()
-        console.log(searchText)
-        const ListUsersTwo = listUsers.filter(({ name }) => name.toLocaleLowerCase().includes(searchText))
-        console.log(ListUsersTwo)
-        // tableDiv.remove()
-        // const table = document.createElement('table')
-        // document.body.append(table)
-        render(ListUsersTwo)
+        if (selectTypeSearch == "name") {
+            const listUsersName = listUsers.filter(({ name }) => name.toLocaleLowerCase().includes(searchText))
+            render(listUsersName)
+            console.log(listUsersName)
+        }
+        else if (selectTypeSearch == "phone") {
+            const listUsersPhone = listUsers.filter(({ phone }) => phone.toLocaleLowerCase().includes(searchText))
+            render(listUsersPhone)
+        }
+        else if (selectTypeSearch == "email") {
+            const listUsersEmail = listUsers.filter(({ email }) => email.toLocaleLowerCase().includes(searchText))
+            render(listUsersEmail)
+        }
+        else if (selectTypeSearch == "company") {
+            const listUsersCompany = listUsers.filter(({ company }) => company.name.toLocaleLowerCase().includes(searchText))
+            render(listUsersCompany)
+        }
+        else {
+            alert('Không tìm thấy user!!')
+            render(listUsers)
+        }
     })
 }
 

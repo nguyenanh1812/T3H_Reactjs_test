@@ -8,7 +8,7 @@ const borderStyle = {
 };
 
 export default function todo({todo, index, onRemoveButtonClick , onChangeCompleteButtonClick}) {
-  console.log('index',index)
+  // console.log('index',index)
   return (
     <>
       <div key={index} className={`p-3 alert text-gray my-3 h6 row ${(todo.complete) ? 'alert-success' : 'alert-primary'}`} style={borderStyle}

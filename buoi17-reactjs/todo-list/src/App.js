@@ -1,16 +1,11 @@
 import { useState } from 'react';
 import './App.css';
-
-const borderStyle = {
-  // width: '88%',
-  // maxWidth: "880px"
-  borderRadius: '20px',
-  border: 'none',
-};
+import AddToDo from './components/AddToDo';
+import ListToDo from './components/ListToDo';
 
 function App() {
 
-  const [toDO, setToDo] = useState({
+  const [toDo, setToDo] = useState({
     name: '',
     complete: false
   })
@@ -30,14 +25,14 @@ function App() {
       name: e.target.value,
       complete: false
     });
-    console.log('Todo value is:', e.target.value);
+    // console.log('Todo value is:', e.target.value);
   };
 
   const onAddButtonClick = () => {
-    if (toDO.name != '') {
+    if (toDo.name != '') {
       setToDoList([
         ...toDoList,
-        toDO
+        toDo
       ])
       console.log(toDoList)
       setToDo({
@@ -94,7 +89,10 @@ function App() {
         </p>
       </div>
 
-      <div className='w-100 m-auto'>
+      <AddToDo toDo={toDo} handleChange={handleChange} onAddButtonClick={onAddButtonClick}/>
+      <ListToDo list={toDoList} onChangeCompleteButtonClick={onChangeCompleteButtonClick} onRemoveButtonClick={onRemoveButtonClick}/>
+
+      {/* <div className='w-100 m-auto'>
         <div className='row mt-5'>
           <div className='col-10'>
             <input className="w-100 px-4 float-end h4" placeholder="Type to do..."
@@ -106,8 +104,10 @@ function App() {
             <button style={{ fontSize: '28px' }} className="w-75 p-2 btn btn-outline-success float-start rounded-pill" type="button" id="button-addon2" onClick={onAddButtonClick}><i className="fas fa-plus"></i></button>
           </div>
         </div>
-      </div>
-      <div className='d-flex'>
+      </div> */}
+
+      
+      {/* <div className='d-flex'>
         <div className='col-10 mx-2'>
           {toDoList.map((todo, index) => (
             // {let {name, complete} = todo}
@@ -122,7 +122,7 @@ function App() {
             </div>
           ))}
         </div>
-      </div>
+      </div> */}
     </div>
   );
 }

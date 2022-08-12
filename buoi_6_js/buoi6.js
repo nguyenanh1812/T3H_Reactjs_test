@@ -6,7 +6,7 @@
 // let, var không cần gán giá trị ban đầu còn const thì phải gán
 // const cho giá trị bất biến không thể thay đổi
 // giá trị sai: false, 0, null, undefined, NaN, '
-//bài toán kiểm tra số chẵn lẻ
+// bài toán kiểm tra số chẵn lẻ
 // cách 1 chia dư cho 2
 /*
 var n = 7 ;

@@ -45,12 +45,12 @@ function App() {
       .then((result) => {
         const articles = result.data.articles;
         setArticles(articles);
-        setLoading(true)
+        setLoading(true);
       })
       .catch((error) => {
         console.log(error);
         setArticles([]);
-        setLoading(false)
+        setLoading(false);
       });
   };
 
@@ -120,18 +120,19 @@ function App() {
         <h2>Đã hết dữ liệu, Hãy chuyển hướng bạn về trang trước đó!</h2>
       )}
 
-      {!loading && 
+      {!loading ? (
         <div>Loading.... </div>
-      }
-      <div className="d-flex justify-content-center h3">
-        <button className="mx-2 px-3" onClick={handlePreV}>
-          <i className="fas fa-angle-double-left"></i>
-        </button>
-        <button className="mx-2 px-3">{offset}</button>
-        <button className="mx-2 px-3" onClick={handleNext}>
-          <i className="fas fa-angle-double-right"></i>
-        </button>
-      </div>
+      ) : (
+        <div className="d-flex justify-content-center h3">
+          <button className="mx-2 px-3" onClick={handlePreV}>
+            <i className="fas fa-angle-double-left"></i>
+          </button>
+          <button className="mx-2 px-3">{offset}</button>
+          <button className="mx-2 px-3" onClick={handleNext}>
+            <i className="fas fa-angle-double-right"></i>
+          </button>
+        </div>
+      )}
     </div>
   );
 }

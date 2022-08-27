@@ -4,37 +4,48 @@ import { useEffect, useState } from "react";
 
 function App() {
   const [articles, setArticles] = useState([]);
-  const [offset, setOffset] = useState(1);
+  const [offset, setOffset] = useState(0);
   const [loading, setLoading] = useState(false);
+  const [favorite, setFavorite] = useState(false);
 
+  const tk =
+    "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6Im5ndXllbmFuaDE4MTJ6eGMyQGdtYWlsLmNvbSIsInVzZXJuYW1lIjoibmd1eWVuYW5oMTgxMnp4YzJAZ21haWwuY29tIiwiaWF0IjoxNjYxNjI2OTEwLCJleHAiOjE2NjY4MTA5MTB9.CfSIX_WWFSGBe2rrGCMg4_hHItEhPEejVvUL0XUYs9w";
   const api = axios.create({
     baseURL: "https://api.realworld.io/api",
-    timeout: 1000,
+    headers: {
+      "Content-Type": "application/json",
+      Authorization: `Bearer ${tk}`,
+    },
   });
 
-  api.interceptors.request.use(
-    (req) => {
-      const tk = localStorage.getItem("token");
+  axios.interceptors.request.use(
+    function (config) {
       if (tk) {
-        req.headers = {
-          ...App(req.headers || {}),
-          Authorization:
-            "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InRlc3QxMjM0NTY3OEBnbWFpbC5jb20iLCJ1c2VybmFtZSI6InBvc3RlciIsImlhdCI6MTY2MTE3NTkyNywiZXhwIjoxNjY2MzU5OTI3fQ.sTkmilCqAmUYL4U8UZ-sWI4xmN0jeLqgj2asGEJNIiM",
-        };
+        config.headers.common.Authorization = `Bearer ${tk}`;
       }
-      return req;
+      return config;
     },
-    (err) => Promise.reject(err)
+    function (error) {
+      // Do something with request error
+      return Promise.reject(error);
+    }
   );
 
-  api.interceptors.response.use(
-    (res) => res,
-    async (err) => {
-      Promise.reject(err);
+  axios.interceptors.response.use(
+    function (response) {
+      // Any status code that lie within the range of 2xx cause this function to trigger
+      // Do something with response data
+      return response;
+    },
+    function (error) {
+      // Any status codes that falls outside the range of 2xx cause this function to trigger
+      // Do something with response error
+      return Promise.reject(error);
     }
   );
 
   const getApi = (offset) => {
+    setLoading(true);
     api
       .get("/articles", {
         params: {
@@ -45,23 +56,22 @@ function App() {
       .then((result) => {
         const articles = result.data.articles;
         setArticles(articles);
-        setLoading(true);
+        setLoading(false);
       })
       .catch((error) => {
         console.log(error);
         setArticles([]);
-        setLoading(false);
       });
   };
 
   useEffect(() => {
     getApi(offset);
-  }, [offset]);
+  }, [offset, favorite]);
 
   const handlePreV = () => {
-    if (offset === 1) {
+    if (offset === 0) {
       alert("Bạn đang ở trang 1! Không có trang nhỏ hơn!");
-      return (offset = 1);
+      return (offset = 0);
     }
     setOffset(offset - 1);
   };
@@ -72,13 +82,22 @@ function App() {
         "Đây là trang cuối! Chúng tôi sẽ chuyển hướng bạn đến trang trước!"
       );
       return setOffset(offset - 1);
+    }
+    setOffset(offset + 1);
+  };
+
+  const handleFavorite = (article) => {
+    console.log("article", article);
+    const { favorited, favoritesCount, slug } = article;
+    if (!favorited) {
+      api.post(`articles/${slug}/favorite`).then(() => setFavorite(favorite=> !favorite));
     } else {
-      setOffset(offset + 1);
+      api.delete(`articles/${slug}/favorite`).then(() => setFavorite(!favorite));
     }
   };
 
   return (
-    <div className="container" style={{ marginTop: "5%" }}>
+    <div className="container position-relative" style={{ marginTop: "5%" }}>
       {articles.map((article) => (
         <div
           key={article.slug}
@@ -89,7 +108,7 @@ function App() {
             <img
               src={article.author.image}
               alt="user-img"
-              className="rounded-circle mb-1"
+              className="rounded-circle m-2"
             />
             <span
               className="text-center mt-3"
@@ -97,14 +116,22 @@ function App() {
             >
               {article.author.username}
             </span>
-            <h3 className="text-start">Title: {article.title}</h3>
-            <h6 className="">{article.description} </h6>
+            <h3 className="text-start">
+              Title: <span className="fw-bold">{article.title}</span>
+            </h3>
+            <h5 className="fst-italic">{article.description} </h5>
+            <h6 className="fst-normal fw-light">{article.body} </h6>
           </div>
-          <div className="col-3 d-flex justify-content-end">
+          <div
+            className="col-3 d-flex justify-content-end"
+            style={{ cursor: "pointer" }}
+          >
             <p
-              className="d-flex justify-content-around align-items-center alert alert-success"
+              onClick={() => handleFavorite(article)}
+              className={`d-flex justify-content-around align-items-center alert ${
+                article.favorited ? "alert-success" : "alert-secondary"
+              }`}
               style={{
-                color: "green",
                 fontWeight: "600",
                 width: "100px",
                 height: "40px",
@@ -120,14 +147,22 @@ function App() {
         <h2>Đã hết dữ liệu, Hãy chuyển hướng bạn về trang trước đó!</h2>
       )}
 
-      {!loading ? (
-        <div>Loading.... </div>
+      {loading ? (
+        <div className="position-absolute" style={{ top: "50%", left: "50%" }}>
+          <div
+            className="spinner-border text-success"
+            role="status"
+            style={{ width: "3rem", height: "3rem" }}
+          >
+            <span className="visually-hidden">Loading...</span>
+          </div>
+        </div>
       ) : (
-        <div className="d-flex justify-content-center h3">
+        <div className="d-flex justify-content-center h3 position-relative">
           <button className="mx-2 px-3" onClick={handlePreV}>
             <i className="fas fa-angle-double-left"></i>
           </button>
-          <button className="mx-2 px-3">{offset}</button>
+          <button className="mx-2 px-3">{offset + 1}</button>
           <button className="mx-2 px-3" onClick={handleNext}>
             <i className="fas fa-angle-double-right"></i>
           </button>
